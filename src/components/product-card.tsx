@@ -11,9 +11,9 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/products/${product.id}`} className="group">
-      <Card className="h-full flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+      <Card className="h-full flex flex-col overflow-hidden border-border/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
         <CardHeader className="p-0">
-          <div className="relative aspect-[3/4] w-full overflow-hidden">
+          <div className="relative aspect-[3/4] w-full overflow-hidden bg-secondary/40">
             <Image
               src={product.images[0].src}
               alt={product.images[0].alt}
@@ -24,14 +24,17 @@ export function ProductCard({ product }: ProductCardProps) {
             />
           </div>
         </CardHeader>
-        <CardContent className="flex-grow p-4">
-          <h3 className="font-semibold text-lg font-headline leading-tight truncate">{product.name}</h3>
-          <p className="text-sm text-muted-foreground mt-1">{product.category}</p>
+        <CardContent className="flex-grow p-5">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{product.category}</p>
+          <h3 className="mt-2 font-semibold text-lg font-headline leading-tight">{product.name}</h3>
         </CardContent>
-        <CardFooter className="p-4 pt-0 flex justify-between items-center">
-          <p className="font-bold text-lg text-primary">${product.price.toFixed(2)}</p>
-          <Button variant="outline" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-            View Details
+        <CardFooter className="p-5 pt-0 flex items-center justify-between">
+          <p className="font-semibold text-lg text-primary">${product.price.toFixed(2)}</p>
+          <Button
+            variant="outline"
+            className="rounded-full border-primary/30 px-4 text-xs uppercase tracking-[0.2em] group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+          >
+            View
           </Button>
         </CardFooter>
       </Card>

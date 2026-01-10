@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/product-card';
@@ -7,12 +6,6 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Terminal } from 'lucide-react';
 
 export default async function Home() {
-  const heroImage = {
-    src: 'https://picsum.photos/seed/200/1600/600',
-    alt: 'Islamic geometric pattern banner',
-    hint: 'islamic pattern',
-  };
-
   let products = [];
   let error = null;
 
@@ -24,43 +17,127 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center text-center text-primary-foreground">
-        <Image
-          src={heroImage.src}
-          alt={heroImage.alt}
-          fill
-          priority
-          className="object-cover -z-10 brightness-50"
-          data-ai-hint={heroImage.hint}
-        />
-        <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold font-headline md:text-6xl text-white drop-shadow-lg">
-              Curated for the Seeker
-            </h1>
-            <p className="mt-4 text-lg text-gray-200 drop-shadow-md">
-              Discover a collection of goods that inspire, educate, and adorn
-              the path of truth.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground"
-            >
-              <Link href="#products">Shop Now</Link>
-            </Button>
+      <section className="relative overflow-hidden bg-primary text-primary-foreground">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.2),_transparent_55%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/90 to-primary" />
+        <div className="relative container px-4 py-20 md:px-6 md:py-28">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <p className="text-xs uppercase tracking-[0.35em] text-primary-foreground/70">Tareeqal Haqq Store</p>
+              <h1 className="mt-4 text-4xl font-semibold font-headline md:text-6xl">
+                Curated essentials for the path of knowledge.
+              </h1>
+              <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
+                Inspired by the timeless design language of Tareeqal Haqq and Rahmaniyyah, our collections keep the focus on
+                clarity, devotion, and purpose.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Button asChild size="lg" className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Link href="#products">Shop the collection</Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                >
+                  <Link href="#story">Our design ethos</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="rounded-3xl border border-primary-foreground/20 bg-primary-foreground/10 p-8 backdrop-blur">
+              <p className="text-xs uppercase tracking-[0.35em] text-primary-foreground/60">What you&apos;ll find</p>
+              <ul className="mt-6 space-y-5 text-base">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
+                  Thoughtful study tools and reading essentials.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
+                  Heritage-inspired apparel and stationery.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
+                  Home accents that keep spaces calm and purposeful.
+                </li>
+              </ul>
+              <div className="mt-8 border-t border-primary-foreground/20 pt-6 text-sm text-primary-foreground/70">
+                Curated weekly with intentional design and ethical sourcing.
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="products" className="py-12 md:py-24">
+      <section id="story" className="py-16 md:py-24">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-10 lg:grid-cols-[0.6fr_1fr] lg:items-center">
+            <div className="rounded-3xl border border-border/60 bg-secondary/40 p-8">
+              <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Design principles</p>
+              <h2 className="mt-4 text-3xl font-semibold font-headline">Simple. Reverent. Intentional.</h2>
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                Inspired by the calm digital spaces of tareeqalhaqq.org and rahmaniyyah.com, this storefront is designed to
+                feel serene and focused. Every element is placed for clarity and ease.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  title: 'Clarity in structure',
+                  description: 'Open layouts, intentional spacing, and calm typography.',
+                },
+                {
+                  title: 'Warm materials',
+                  description: 'Soft neutrals with deep green and gold accents.',
+                },
+                {
+                  title: 'Purposeful curation',
+                  description: 'Products that support study, remembrance, and community.',
+                },
+              ].map(item => (
+                <div key={item.title} className="rounded-2xl border border-border/60 bg-background p-6 shadow-sm">
+                  <h3 className="font-semibold text-lg font-headline">{item.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-secondary/40 py-14">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: 'Guided reading',
+                description: 'Translations, study sets, and journals for daily reflection.',
+              },
+              {
+                title: 'Refined gifts',
+                description: 'Thoughtful keepsakes for students, teachers, and gatherings.',
+              },
+              {
+                title: 'Quiet spaces',
+                description: 'Soft furnishings and decor to elevate mindful spaces.',
+              },
+            ].map(item => (
+              <div key={item.title} className="rounded-2xl border border-border/60 bg-background p-6">
+                <h3 className="text-base font-semibold">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="products" className="py-16 md:py-24">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-headline tracking-tight">
-              Featured Products
-            </h2>
-            <p className="mt-2 text-lg text-muted-foreground">
-              Handpicked items for your journey.
+            <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Featured collection</p>
+            <h2 className="mt-3 text-3xl font-semibold font-headline tracking-tight">Shop the curated edit</h2>
+            <p className="mt-3 text-lg text-muted-foreground">
+              A streamlined assortment that reflects the elegance of Tareeqal Haqq and Rahmaniyyah.
             </p>
           </div>
           {error && (
@@ -70,25 +147,37 @@ export default async function Home() {
               <AlertDescription>
                 <p>{error}</p>
                 <p className="mt-2 text-xs">
-                  Please ensure your Printify API key is set correctly in the{' '}
-                  <code className="font-mono">.env</code> file.
+                  Please ensure your Printify API key is set correctly in the <code className="font-mono">.env</code> file.
                 </p>
               </AlertDescription>
             </Alert>
           )}
           {products.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {products.map(product => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
           ) : !error ? (
             <div className="text-center text-muted-foreground">
-              <p>
-                No products found. Please add products to your Printify store.
-              </p>
+              <p>No products found. Please add products to your Printify store.</p>
             </div>
           ) : null}
+        </div>
+      </section>
+
+      <section className="border-t border-border/60 bg-background py-14">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center gap-6 rounded-3xl border border-border/60 bg-secondary/30 p-10 text-center">
+            <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Stay connected</p>
+            <h2 className="text-3xl font-semibold font-headline">Receive new releases & community notes.</h2>
+            <p className="max-w-2xl text-sm text-muted-foreground">
+              Join the mailing list for seasonal drops, curated reading lists, and updates from the Tareeqal Haqq network.
+            </p>
+            <Button asChild size="lg" className="rounded-full">
+              <Link href="/account">Create your account</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
