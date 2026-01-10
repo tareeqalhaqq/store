@@ -1,0 +1,52 @@
+{
+  "placeholderImages": [
+    {
+      "id": "thobe",
+      "description": "Man wearing a traditional white thobe.",
+      "imageUrl": "https://images.unsplash.com/photo-1616469854468-dc9c3ae27232?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpc2xhbWljJTIwY2xvdGhpbmd8ZW58MHx8fHwxNzY1NTk4MzAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "islamic clothing"
+    },
+    {
+      "id": "prayer-beads",
+      "description": "Close-up of Islamic prayer beads (tasbih).",
+      "imageUrl": "https://images.unsplash.com/photo-1574246604907-db69e30ddb97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpc2xhbWljJTIwcHJheWVyfGVufDB8fHx8MTc2NTU5ODMwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "islamic prayer"
+    },
+    {
+      "id": "quran",
+      "description": "An open Quran on a stand.",
+      "imageUrl": "https://images.unsplash.com/photo-1721744671779-c6ade1bc64df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxxdXJhbiUyMGJvb2t8ZW58MHx8fHwxNzY1NTQ4MDg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "quran book"
+    },
+    {
+      "id": "calligraphy-art",
+      "description": "Islamic calligraphy wall art.",
+      "imageUrl": "https://images.unsplash.com/photo-1558114965-eeb97aa84c3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpc2xhbWljJTIwYXJ0fGVufDB8fHx8MTc2NTU5ODMwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "islamic art"
+    },
+    {
+      "id": "prayer-rug",
+      "description": "A decorative Islamic prayer rug.",
+      "imageUrl": "https://images.unsplash.com/photo-1594847915592-2a7ef568e2b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwcmF5ZXIlMjBydWd8ZW58MHx8fHwxNzY1NTk4MzAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "prayer rug"
+    },
+    {
+      "id": "oud-perfume",
+      "description": "A bottle of traditional oud perfume.",
+      "imageUrl": "https://images.unsplash.com/photo-1642698215110-87817f1fbe0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxvdWQlMjBwZXJmdW1lfGVufDB8fHx8MTc2NTU5ODMwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "oud perfume"
+    },
+    {
+      "id": "kufi-hat",
+      "description": "A white knitted kufi hat.",
+      "imageUrl": "https://images.unsplash.com/photo-1730305946364-2f8c0182da5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxrdWZpJTIwaGF0fGVufDB8fHx8MTc2NTU5ODMwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kufi hat"
+    },
+    {
+      "id": "islamic-history-book",
+      "description": "A book about Islamic history.",
+      "imageUrl": "https://images.unsplash.com/photo-1629992101753-56d196c8aabb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxib29rJTIwY292ZXJ8ZW58MHx8fHwxNzY1NTc5Njk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "book cover"
+    }
+  ]
+}
