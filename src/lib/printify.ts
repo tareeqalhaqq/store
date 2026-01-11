@@ -2,15 +2,28 @@ import type { PrintifyProduct, PrintifyShop, Product } from '@/lib/types';
 
 const printifyApiUrl = 'https://api.printify.com/v1';
 
+function getPrintifyApiKey(): string {
+  const apiKey = process.env.PRINTIFY_API_KEY;
+  if (!apiKey) {
+    throw new Error('Missing Printify API key. Set PRINTIFY_API_KEY in the .env file.');
+  }
+  return apiKey;
+}
+
 async function getShops(): Promise<PrintifyShop[]> {
+  const apiKey = getPrintifyApiKey();
   const response = await fetch(`${printifyApiUrl}/shops.json`, {
     headers: {
-      'Authorization': `Bearer ${process.env.PRINTIFY_API_KEY}`
+      'Authorization': `Bearer ${apiKey}`
     },
     next: { revalidate: 3600 } // Revalidate every hour
   });
   if (!response.ok) {
-    throw new Error('Failed to fetch Printify shops');
+    const details = await response.text();
+    const message = details
+      ? `Failed to fetch Printify shops (${response.status} ${response.statusText}): ${details}`
+      : `Failed to fetch Printify shops (${response.status} ${response.statusText})`;
+    throw new Error(message);
   }
   return response.json();
 }
@@ -25,16 +38,20 @@ export async function getPrintifyProducts(shopId?: string): Promise<PrintifyProd
     shopToFetch = shops[0].id.toString();
   }
 
+  const apiKey = getPrintifyApiKey();
   const response = await fetch(`${printifyApiUrl}/shops/${shopToFetch}/products.json`, {
     headers: {
-      'Authorization': `Bearer ${process.env.PRINTIFY_API_KEY}`
+      'Authorization': `Bearer ${apiKey}`
     },
     next: { revalidate: 3600 } // Revalidate every hour
   });
 
   if (!response.ok) {
-    console.error(await response.text());
-    throw new Error(`Failed to fetch products for shop ${shopToFetch}`);
+    const details = await response.text();
+    const message = details
+      ? `Failed to fetch products for shop ${shopToFetch} (${response.status} ${response.statusText}): ${details}`
+      : `Failed to fetch products for shop ${shopToFetch} (${response.status} ${response.statusText})`;
+    throw new Error(message);
   }
   
   const productsResponse = await response.json();
