@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Product not found" };
   }
   return {
-    title: `${product.name} | Tareeqal Haqq Store`,
+    title: `${product.name} | Haqq Apparel`,
     description: product.description,
   };
 }
