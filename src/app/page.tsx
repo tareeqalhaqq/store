@@ -23,13 +23,13 @@ export default async function Home() {
         <div className="relative container px-4 py-20 md:px-6 md:py-28">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-primary-foreground/70">Tareeqal Haqq Store</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-primary-foreground/70">Haqq Apparel</p>
               <h1 className="mt-4 text-4xl font-semibold font-headline md:text-6xl">
-                Curated essentials for the path of knowledge.
+                Apparel, notebooks, and books with intention.
               </h1>
               <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
-                Inspired by the timeless design language of Tareeqal Haqq and Rahmaniyyah, our collections keep the focus on
-                clarity, devotion, and purpose.
+                Haqq Apparel blends modern form with timeless purpose, offering everyday pieces for study, reflection, and
+                community.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button asChild size="lg" className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90">
@@ -50,15 +50,15 @@ export default async function Home() {
               <ul className="mt-6 space-y-5 text-base">
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  Thoughtful study tools and reading essentials.
+                  Clothing built for comfort and calm focus.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  Heritage-inspired apparel and stationery.
+                  Notebooks for lessons, notes, and reflection.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  Home accents that keep spaces calm and purposeful.
+                  Books to guide study and strengthen understanding.
                 </li>
               </ul>
               <div className="mt-8 border-t border-primary-foreground/20 pt-6 text-sm text-primary-foreground/70">
@@ -76,8 +76,8 @@ export default async function Home() {
               <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Design principles</p>
               <h2 className="mt-4 text-3xl font-semibold font-headline">Simple. Reverent. Intentional.</h2>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                Inspired by the calm digital spaces of tareeqalhaqq.org and rahmaniyyah.com, this storefront is designed to
-                feel serene and focused. Every element is placed for clarity and ease.
+                Haqq Apparel is designed to feel serene and focused. Every element is placed for clarity, comfort, and
+                purpose.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
@@ -105,21 +105,21 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-secondary/40 py-14">
+      <section id="sections" className="bg-secondary/40 py-14">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 md:grid-cols-3">
             {[
               {
-                title: 'Guided reading',
-                description: 'Translations, study sets, and journals for daily reflection.',
+                title: 'Clothing',
+                description: 'Soft essentials and modest staples crafted for daily wear.',
               },
               {
-                title: 'Refined gifts',
-                description: 'Thoughtful keepsakes for students, teachers, and gatherings.',
+                title: 'Notebooks',
+                description: 'Lined and blank journals for lessons, notes, and reflection.',
               },
               {
-                title: 'Quiet spaces',
-                description: 'Soft furnishings and decor to elevate mindful spaces.',
+                title: 'Books',
+                description: 'Carefully chosen titles to guide study and deepen understanding.',
               },
             ].map(item => (
               <div key={item.title} className="rounded-2xl border border-border/60 bg-background p-6">
@@ -137,7 +137,7 @@ export default async function Home() {
             <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Featured collection</p>
             <h2 className="mt-3 text-3xl font-semibold font-headline tracking-tight">Shop the curated edit</h2>
             <p className="mt-3 text-lg text-muted-foreground">
-              A streamlined assortment that reflects the elegance of Tareeqal Haqq and Rahmaniyyah.
+              A focused assortment of apparel, notebooks, and books for everyday study.
             </p>
           </div>
           {error && (
@@ -172,7 +172,7 @@ export default async function Home() {
             <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Stay connected</p>
             <h2 className="text-3xl font-semibold font-headline">Receive new releases & community notes.</h2>
             <p className="max-w-2xl text-sm text-muted-foreground">
-              Join the mailing list for seasonal drops, curated reading lists, and updates from the Tareeqal Haqq network.
+              Join the mailing list for seasonal drops, curated reading lists, and updates from Haqq Apparel.
             </p>
             <Button asChild size="lg" className="rounded-full">
               <Link href="/account">Create your account</Link>

@@ -16,7 +16,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2">
           <GeometricStarLogo className="h-8 w-8 text-accent" />
           <span className="text-xl font-semibold tracking-tight text-primary font-headline">
-            Tareeqal Haqq
+            Haqq Apparel
           </span>
         </Link>
         <nav className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:flex">

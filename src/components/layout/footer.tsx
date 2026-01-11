@@ -10,20 +10,19 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2">
               <GeometricStarLogo className="h-8 w-8 text-accent" />
               <span className="text-xl font-semibold tracking-tight text-primary font-headline">
-                Tareeqal Haqq
+                Haqq Apparel
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              A refined selection of study essentials, thoughtful gifts, and home pieces for the seeker.
+              Clothing, notebooks, and books designed for focused study and everyday life.
             </p>
           </div>
           <div className="text-sm">
             <h4 className="font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4">Shop</h4>
             <ul className="space-y-2">
-              <li><Link href="/#products" className="hover:text-primary">Study Essentials</Link></li>
-              <li><Link href="/#products" className="hover:text-primary">Books & Prints</Link></li>
-              <li><Link href="/#products" className="hover:text-primary">Everyday Carry</Link></li>
-              <li><Link href="/#products" className="hover:text-primary">Home & Living</Link></li>
+              <li><Link href="/#sections" className="hover:text-primary">Clothing</Link></li>
+              <li><Link href="/#sections" className="hover:text-primary">Notebooks</Link></li>
+              <li><Link href="/#sections" className="hover:text-primary">Books</Link></li>
             </ul>
           </div>
           <div className="text-sm">
@@ -37,8 +36,8 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-10 border-t border-border/60 pt-6 text-xs text-muted-foreground flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <p>&copy; {new Date().getFullYear()} Tareeqal Haqq Store. All Rights Reserved.</p>
-          <p>Designed for the Rahmaniyyah community.</p>
+          <p>&copy; {new Date().getFullYear()} Haqq Apparel. All Rights Reserved.</p>
+          <p>Designed with clarity, calm, and purpose.</p>
         </div>
       </div>
     </footer>

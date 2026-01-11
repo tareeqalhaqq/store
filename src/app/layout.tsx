@@ -6,8 +6,8 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'Tareeqal Haqq Store',
-  description: 'A store for Tareeqal Haqq',
+  title: 'Haqq Apparel',
+  description: 'Apparel, notebooks, and books from Haqq Apparel.',
 };
 
 export default function RootLayout({
