@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Product not found" };
   }
   return {
-    title: `${product.name} | Haqq Apparel`,
+    title: `${product.name} | Tareeq Al Haqq`,
     description: product.description,
   };
 }
@@ -34,19 +34,19 @@ export default async function ProductPage({ params }: Props) {
   if (!product) {
     notFound();
   }
-  
+
   const allProducts = await getProducts();
 
   return (
-    <div className="container mx-auto px-4 py-8 md:px-6 md:py-12">
-      <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+    <div className="container mx-auto px-4 py-10 md:px-6 md:py-16">
+      <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
         <div>
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden border-border/50">
             <Carousel className="w-full">
               <CarouselContent>
                 {product.images.map((image, index) => (
                   <CarouselItem key={index}>
-                    <div className="relative aspect-square">
+                    <div className="relative aspect-square bg-secondary/20">
                       <Image
                         src={image.src}
                         alt={image.alt}
@@ -72,19 +72,19 @@ export default async function ProductPage({ params }: Props) {
 
         <div className="flex flex-col justify-center">
           <div>
-            <p className="text-sm font-medium text-primary">{product.category}</p>
-            <h1 className="text-3xl md:text-4xl font-bold font-headline mt-1">{product.name}</h1>
-            <p className="text-2xl font-bold text-primary mt-4">${product.price.toFixed(2)}</p>
-            <p className="mt-4 text-muted-foreground leading-relaxed">{product.description}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-accent">{product.category}</p>
+            <h1 className="text-3xl md:text-4xl font-bold font-headline tracking-tight mt-2">{product.name}</h1>
+            <p className="text-2xl font-bold text-foreground mt-4">${product.price.toFixed(2)}</p>
+            <p className="mt-5 text-muted-foreground leading-relaxed">{product.description}</p>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-8">
             <AddToCartForm product={product} />
           </div>
         </div>
       </div>
-      
-      <div className="mt-16 md:mt-24">
+
+      <div className="mt-20 md:mt-28">
         <ProductRecommendations currentProductId={product.id} allProducts={allProducts} />
       </div>
     </div>
