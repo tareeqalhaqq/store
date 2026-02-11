@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/product-card';
 import { getProducts } from '@/lib/printify';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Terminal } from 'lucide-react';
+import { Terminal, ArrowRight, BookOpen, Shirt, NotebookPen } from 'lucide-react';
 
 export default async function Home() {
   let products = [];
@@ -17,87 +17,125 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden bg-primary text-primary-foreground">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.2),_transparent_55%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/90 to-primary" />
-        <div className="relative container px-4 py-20 md:px-6 md:py-28">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-primary-foreground/70">Haqq Apparel</p>
-              <h1 className="mt-4 text-4xl font-semibold font-headline md:text-6xl">
-                Apparel, notebooks, and books with intention.
-              </h1>
-              <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
-                Haqq Apparel blends modern form with timeless purpose, offering everyday pieces for study, reflection, and
-                community.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button asChild size="lg" className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90">
-                  <Link href="#products">Shop the collection</Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-                >
-                  <Link href="#story">Our design ethos</Link>
-                </Button>
-              </div>
+      {/* Hero */}
+      <section className="relative overflow-hidden hero-gradient text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.12),_transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(200,170,100,0.08),_transparent_50%)]" />
+        <div className="relative container px-4 py-24 md:px-6 md:py-36 lg:py-44">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-medium tracking-wide text-white/80">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+              New collection available
             </div>
-            <div className="rounded-3xl border border-primary-foreground/20 bg-primary-foreground/10 p-8 backdrop-blur">
-              <p className="text-xs uppercase tracking-[0.35em] text-primary-foreground/60">What you&apos;ll find</p>
-              <ul className="mt-6 space-y-5 text-base">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  Clothing built for comfort and calm focus.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  Notebooks for lessons, notes, and reflection.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  Books to guide study and strengthen understanding.
-                </li>
-              </ul>
-              <div className="mt-8 border-t border-primary-foreground/20 pt-6 text-sm text-primary-foreground/70">
-                Curated weekly with intentional design and ethical sourcing.
-              </div>
+            <h1 className="mt-8 text-5xl font-extrabold font-headline tracking-tight md:text-7xl lg:text-8xl leading-[0.95]">
+              Tareeq
+              <br />
+              Al Haqq
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-white/70 leading-relaxed max-w-xl">
+              Apparel, notebooks, and books designed with intention for study, reflection, and community.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 h-12 text-sm"
+              >
+                <Link href="#products">
+                  Shop now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="rounded-full border-white/25 text-white hover:bg-white/10 backdrop-blur-sm h-12 px-8 text-sm"
+              >
+                <Link href="#story">Our story</Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="story" className="py-16 md:py-24">
+      {/* Categories bento */}
+      <section id="sections" className="py-20 md:py-28">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-10 lg:grid-cols-[0.6fr_1fr] lg:items-center">
-            <div className="rounded-3xl border border-border/60 bg-secondary/40 p-8">
-              <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Design principles</p>
-              <h2 className="mt-4 text-3xl font-semibold font-headline">Simple. Reverent. Intentional.</h2>
-              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                Haqq Apparel is designed to feel serene and focused. Every element is placed for clarity, comfort, and
-                purpose.
+          <div className="text-center mb-14">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">What we offer</p>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold font-headline tracking-tight">
+              Curated for purpose
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                icon: Shirt,
+                title: 'Clothing',
+                description: 'Comfortable, modest essentials designed for everyday wear and calm focus.',
+                color: 'bg-emerald-50 text-emerald-700',
+              },
+              {
+                icon: NotebookPen,
+                title: 'Notebooks',
+                description: 'Quality journals for lessons, notes, and personal reflection.',
+                color: 'bg-amber-50 text-amber-700',
+              },
+              {
+                icon: BookOpen,
+                title: 'Books',
+                description: 'Carefully chosen titles to guide study and deepen understanding.',
+                color: 'bg-sky-50 text-sky-700',
+              },
+            ].map(item => (
+              <div
+                key={item.title}
+                className="group relative rounded-2xl border border-border/60 bg-card p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${item.color} mb-5`}>
+                  <item.icon className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-bold font-headline">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                <ArrowRight className="mt-4 h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Design ethos */}
+      <section id="story" className="py-20 md:py-28 bg-secondary/40">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Our philosophy</p>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold font-headline tracking-tight">
+                Simple. Reverent.
+                <br />
+                Intentional.
+              </h2>
+              <p className="mt-6 text-muted-foreground leading-relaxed max-w-lg">
+                Every product at Tareeq Al Haqq is designed to feel serene and focused. We believe in clarity of structure, warm materials, and purposeful curation that supports study, remembrance, and community.
               </p>
+              <Button asChild variant="outline" className="mt-8 rounded-full px-6">
+                <Link href="#products">
+                  Explore the collection
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid grid-cols-2 gap-4">
               {[
-                {
-                  title: 'Clarity in structure',
-                  description: 'Open layouts, intentional spacing, and calm typography.',
-                },
-                {
-                  title: 'Warm materials',
-                  description: 'Soft neutrals with deep green and gold accents.',
-                },
-                {
-                  title: 'Purposeful curation',
-                  description: 'Products that support study, remembrance, and community.',
-                },
-              ].map(item => (
-                <div key={item.title} className="rounded-2xl border border-border/60 bg-background p-6 shadow-sm">
-                  <h3 className="font-semibold text-lg font-headline">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                { value: '100%', label: 'Ethically sourced materials' },
+                { value: 'Curated', label: 'Weekly new additions' },
+                { value: 'Purpose', label: 'In every design choice' },
+                { value: 'Community', label: 'Built for connection' },
+              ].map(stat => (
+                <div key={stat.label} className="rounded-2xl border border-border/60 bg-card p-6">
+                  <p className="text-2xl font-bold font-headline text-primary">{stat.value}</p>
+                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -105,39 +143,18 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="sections" className="bg-secondary/40 py-14">
+      {/* Products */}
+      <section id="products" className="py-20 md:py-28">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: 'Clothing',
-                description: 'Soft essentials and modest staples crafted for daily wear.',
-              },
-              {
-                title: 'Notebooks',
-                description: 'Lined and blank journals for lessons, notes, and reflection.',
-              },
-              {
-                title: 'Books',
-                description: 'Carefully chosen titles to guide study and deepen understanding.',
-              },
-            ].map(item => (
-              <div key={item.title} className="rounded-2xl border border-border/60 bg-background p-6">
-                <h3 className="text-base font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="products" className="py-16 md:py-24">
-        <div className="container px-4 md:px-6">
-          <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Featured collection</p>
-            <h2 className="mt-3 text-3xl font-semibold font-headline tracking-tight">Shop the curated edit</h2>
-            <p className="mt-3 text-lg text-muted-foreground">
-              A focused assortment of apparel, notebooks, and books for everyday study.
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Featured</p>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold font-headline tracking-tight">
+                The collection
+              </h2>
+            </div>
+            <p className="text-sm text-muted-foreground max-w-sm">
+              A focused assortment of apparel, notebooks, and books for purposeful everyday living.
             </p>
           </div>
           {error && (
@@ -153,30 +170,42 @@ export default async function Home() {
             </Alert>
           )}
           {products.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {products.map(product => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
           ) : !error ? (
-            <div className="text-center text-muted-foreground">
+            <div className="text-center text-muted-foreground py-20">
               <p>No products found. Please add products to your Printify store.</p>
             </div>
           ) : null}
         </div>
       </section>
 
-      <section className="border-t border-border/60 bg-background py-14">
+      {/* CTA */}
+      <section className="py-20 md:py-28">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center gap-6 rounded-3xl border border-border/60 bg-secondary/30 p-10 text-center">
-            <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Stay connected</p>
-            <h2 className="text-3xl font-semibold font-headline">Receive new releases & community notes.</h2>
-            <p className="max-w-2xl text-sm text-muted-foreground">
-              Join the mailing list for seasonal drops, curated reading lists, and updates from Haqq Apparel.
-            </p>
-            <Button asChild size="lg" className="rounded-full">
-              <Link href="/account">Create your account</Link>
-            </Button>
+          <div className="relative overflow-hidden rounded-3xl hero-gradient p-12 md:p-20 text-center text-white">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.08),_transparent_60%)]" />
+            <div className="relative">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline tracking-tight">
+                Stay on the path
+              </h2>
+              <p className="mt-4 text-white/70 max-w-md mx-auto">
+                Join the community for new releases, curated reading lists, and updates from Tareeq Al Haqq.
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="mt-8 rounded-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 h-12"
+              >
+                <Link href="/account">
+                  Create your account
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

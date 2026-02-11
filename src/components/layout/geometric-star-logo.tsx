@@ -9,19 +9,23 @@ export function GeometricStarLogo({ className, ...props }: SVGProps<SVGSVGElemen
       className={cn("fill-current", className)}
       {...props}
     >
-      <g transform="translate(50,50) scale(0.4)">
-        <path
-          d="M0,-100 L29.39, -40.45 L95.11,-30.9 L47.55,15.45 L58.78,80.9 L0,50 L-58.78,80.9 L-47.55,15.45 L-95.11,-30.9 L-29.39,-40.45 Z"
-          stroke="hsl(var(--primary))"
-          strokeWidth="5"
-          fill="hsl(var(--accent))"
-          fillOpacity="0.8"
-        />
-        <path
-          d="M0,-80 L23.51, -32.36 L76.08,-24.72 L38.04,12.36 L47.02,64.72 L0,40 L-47.02,64.72 L-38.04,12.36 L-76.08,-24.72 L-23.51,-32.36 Z"
-          fill="hsl(var(--primary))"
-        />
-      </g>
+      {/* Octagonal frame */}
+      <polygon
+        points="50,5 79,15 95,44 90,76 65,95 35,95 10,76 5,44 21,15"
+        stroke="hsl(var(--primary))"
+        strokeWidth="3"
+        fill="none"
+      />
+      {/* Inner star pattern */}
+      <polygon
+        points="50,20 60,42 85,42 65,56 72,78 50,65 28,78 35,56 15,42 40,42"
+        fill="hsl(var(--accent))"
+        fillOpacity="0.85"
+      />
+      <polygon
+        points="50,28 57,44 75,44 61,54 66,70 50,61 34,70 39,54 25,44 43,44"
+        fill="hsl(var(--primary))"
+      />
     </svg>
   );
 }
